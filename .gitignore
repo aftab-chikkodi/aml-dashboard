@@ -1,0 +1,4 @@
+﻿# Adversarial ML Dashboard
+__pycache__/
+*.pyc
+.env
