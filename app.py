@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -524,7 +524,7 @@ with tabs[3]:
     for mname in selected_models:
         sub = eps_df_f[eps_df_f["Model"]==mname].sort_values("epsilon")
         if len(sub) >= 2:
-            auc = float(np.trapz(sub["ASR"], sub["epsilon"]))
+            auc = float(np.trapezoid(sub["ASR"], sub["epsilon"]))
             auc_rows.append({"Model": mname, "AUC_vulnerability": round(auc, 3)})
     if auc_rows:
         auc_df = pd.DataFrame(auc_rows).sort_values("AUC_vulnerability")
